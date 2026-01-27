@@ -62,7 +62,7 @@ export default function ZurichPage() {
                         How Church Tax Works in Zürich
                     </h2>
 
-                    <div className="prose prose-slate max-w-none mb-8">
+                    <div className="prose prose-gray max-w-none text-gray-800 mb-8">
                         <p>
                             In Canton Zürich, the <strong>Kirchensteuer</strong> (church tax) is automatically
                             deducted from your salary if you are registered as Catholic (römisch-katholisch)

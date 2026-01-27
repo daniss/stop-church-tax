@@ -62,7 +62,7 @@ export default function BaselPage() {
                         How Church Tax Works in Basel-Stadt
                     </h2>
 
-                    <div className="prose prose-slate max-w-none mb-8">
+                    <div className="prose prose-gray max-w-none text-gray-800 mb-8">
                         <p>
                             In Basel-Stadt, the <strong>Kirchensteuer</strong> is charged to registered
                             members of the Catholic and Reformed churches. Unlike some other cantons,

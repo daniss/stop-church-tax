@@ -62,7 +62,7 @@ export default function ZugPage() {
                         The Cost of Church Tax in Zug
                     </h2>
 
-                    <div className="prose prose-slate max-w-none mb-8">
+                    <div className="prose prose-gray max-w-none text-gray-800 mb-8">
                         <p>
                             While Canton Zug is known for low taxes, the <strong>Kirchensteuer</strong> is a significant exception.
                             It is mandatory for all registered Catholic and Reformed residents. Because incomes in Zug are

@@ -62,7 +62,7 @@ export default function BernPage() {
                         How Church Tax Works in Bern
                     </h2>
 
-                    <div className="prose prose-slate max-w-none mb-8">
+                    <div className="prose prose-gray max-w-none text-gray-800 mb-8">
                         <p>
                             In Canton Bern, the <strong>Kirchensteuer</strong> (church tax) is mandatory for
                             members of the recognized churches. The tax is calculated as a percentage of your
