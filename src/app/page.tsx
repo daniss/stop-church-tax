@@ -15,7 +15,7 @@ import {
   MapPin,
 } from 'lucide-react';
 
-const CANTONS: Canton[] = ['ZH', 'GE', 'VD', 'BS'];
+const CANTONS: Canton[] = ['ZH', 'BS', 'BE', 'ZG'];
 const CONFESSIONS: Confession[] = ['catholic', 'reformed'];
 
 export default function HomePage() {
@@ -85,20 +85,21 @@ export default function HomePage() {
             <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/20 rounded-full px-4 py-2 mb-6">
               <BadgeSwissFranc className="w-4 h-4 text-red-400" />
               <span className="text-red-300 text-sm font-medium">
-                For expats in Zurich, Geneva, Basel & Vaud
+                Attention: Do you have Code "A0Y" on your payslip?
               </span>
             </div>
 
             <h1 className="text-4xl sm:text-6xl font-bold text-white mb-6 tracking-tight">
-              Stop Paying{' '}
+              Expats in Zurich: <br className="hidden sm:block" />
+              Stop Paying the Hidden{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">
-                Church Tax
+                'Church Tax'
               </span>
             </h1>
 
             <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-8">
-              Generate the correct resignation letter with the right address in
-              2 minutes. Save CHF 800–2,000 per year.
+              Check your payslip. If you see code <strong>A0Y</strong>, you are paying church tax.
+              Use our tool to switch to <strong>A0N</strong> and save CHF 800–2,000/year.
             </p>
 
             <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-400">
@@ -108,11 +109,11 @@ export default function HomePage() {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-green-400" />
-                <span>Correct parish address</span>
+                <span>Bonus: HR Notification Letter</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-green-400" />
-                <span>German & French</span>
+                <span>Standard German Format</span>
               </div>
             </div>
           </div>
@@ -132,10 +133,10 @@ export default function HomePage() {
               </div>
               <div>
                 <h2 className="text-xl font-bold text-gray-900">
-                  Generate Your Letter
+                  Switch from A0Y to A0N
                 </h2>
                 <p className="text-sm text-gray-500">
-                  We&apos;ll find the correct church office for you
+                  We'll find the correct church office for you
                 </p>
               </div>
             </div>
@@ -345,7 +346,7 @@ export default function HomePage() {
               </button>
 
               <p className="text-center text-xs text-gray-500">
-                Secure payment via Stripe. You&apos;ll receive your PDF
+                Secure payment via Stripe. You'll receive your PDF
                 immediately.
               </p>
             </div>
@@ -357,8 +358,8 @@ export default function HomePage() {
               <div className="inline-flex items-center justify-center w-12 h-12 bg-slate-800 rounded-xl mb-3">
                 <FileText className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-white font-medium">Legal Template</h3>
-              <p className="text-slate-400 text-sm mt-1">ZH, GE, VD, BS supported</p>
+              <h3 className="text-white font-medium">HR Letter</h3>
+              <p className="text-slate-400 text-sm mt-1">Includes A0Y -&gt; A0N request</p>
             </div>
             <div className="p-4">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-slate-800 rounded-xl mb-3">
@@ -376,6 +377,7 @@ export default function HomePage() {
               <h3 className="text-white font-medium">2 Minutes</h3>
               <p className="text-slate-400 text-sm mt-1">Instant PDF download</p>
             </div>
+
           </div>
         </div>
       </main>
@@ -390,19 +392,19 @@ export default function HomePage() {
             {[
               {
                 step: '1',
-                title: 'Enter Details',
-                desc: 'Your canton, ZIP, and confession',
+                title: 'Check Payslip',
+                desc: 'Look for Code \"A0Y\"',
               },
-              { step: '2', title: 'Pay CHF 29', desc: 'Secure Stripe checkout' },
+              { step: '2', title: 'Fill Form', desc: 'Enter your details' },
               {
                 step: '3',
-                title: 'Download PDF',
-                desc: 'Instantly receive your letter',
+                title: 'Get 2 Letters',
+                desc: 'Church Exit + HR Notification',
               },
               {
                 step: '4',
-                title: 'Send & Save',
-                desc: 'Mail it and stop the tax',
+                title: 'Send & Switch',
+                desc: 'Mail letters, switch to A0N',
               },
             ].map((item) => (
               <div key={item.step} className="text-center">
@@ -464,7 +466,7 @@ export default function HomePage() {
               },
               {
                 q: 'What if I picked the wrong confession?',
-                a: 'Contact us at support@swissshield.ch and we\'ll regenerate your letter at no additional cost.',
+                a: 'Contact us at swissshieldsup@outlook.fr and we\'ll regenerate your letter at no additional cost.',
               },
             ].map((faq, i) => (
               <div key={i} className="bg-white rounded-xl p-6 shadow-sm">

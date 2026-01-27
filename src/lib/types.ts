@@ -2,7 +2,7 @@
 
 export type Confession = 'catholic' | 'reformed';
 
-export type Canton = 'ZH' | 'GE' | 'VD' | 'BS';
+export type Canton = 'ZH' | 'BS' | 'BE' | 'ZG';
 
 export interface AddressEntry {
     id: string;

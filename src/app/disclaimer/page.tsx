@@ -85,7 +85,7 @@ export default function DisclaimerPage() {
                     <h2>Contact Us</h2>
                     <p>
                         If you have questions about a specific situation, please consult a professional.
-                        For questions about our service, email <a href="mailto:support@swissshield.ch">support@swissshield.ch</a>
+                        For questions about our service, email <a href="mailto:swissshieldsup@outlook.fr">swissshieldsup@outlook.fr</a>
                     </p>
                 </div>
             </main>

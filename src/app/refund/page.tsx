@@ -55,7 +55,7 @@ export default function RefundPage() {
 
                     <h2>How to Request a Refund</h2>
                     <ol>
-                        <li>Email <a href="mailto:support@swissshield.ch">support@swissshield.ch</a> within 7 days of purchase</li>
+                        <li>Email <a href="mailto:swissshieldsup@outlook.fr">swissshieldsup@outlook.fr</a> within 7 days of purchase</li>
                         <li>Include your payment receipt (from Stripe) or the email used for purchase</li>
                         <li>Describe the issue you encountered</li>
                         <li>We will respond within 2 business days</li>
@@ -76,7 +76,7 @@ export default function RefundPage() {
 
                     <h2>Contact</h2>
                     <p>
-                        For refund requests: <a href="mailto:support@swissshield.ch">support@swissshield.ch</a>
+                        For refund requests: <a href="mailto:swissshieldsup@outlook.fr">swissshieldsup@outlook.fr</a>
                     </p>
                 </div>
             </main>

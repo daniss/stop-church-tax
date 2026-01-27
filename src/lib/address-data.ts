@@ -1,12 +1,16 @@
-// Curated address database for MVP cantons: ZH, GE, VD, BS
-// This is the MOAT - accurate parish/church office addresses
+// Curated address database for German-speaking cantons with mandatory church tax
+// Target cantons: ZH, BS, BE, ZG (all German-speaking, mandatory Kirchensteuer)
+// VD and GE removed - no mandatory church tax in those cantons
 
 import { AddressEntry, Canton, Confession, MatchedAddress } from './types';
 
-// Seed data for initial cantons
-// In production, this would come from Supabase
+// Verified addresses for 2026
 export const addressBook: AddressEntry[] = [
-    // ZURICH (ZH) - Catholic
+    // ============================================
+    // ZÜRICH (ZH) - Largest expat population
+    // ============================================
+
+    // ZH - Catholic (Default)
     {
         id: 'zh-cath-default',
         canton: 'ZH',
@@ -18,10 +22,10 @@ export const addressBook: AddressEntry[] = [
         postal: '8001',
         city: 'Zürich',
         country: 'Schweiz',
-        source_note: 'Cantonal headquarters (Generalvikariat)',
+        source_note: 'Generalvikariat Zürich',
         updated_at: '2026-01-27',
     },
-    // ZURICH (ZH) - Reformed
+    // ZH - Reformed (Default)
     {
         id: 'zh-ref-default',
         canton: 'ZH',
@@ -33,10 +37,10 @@ export const addressBook: AddressEntry[] = [
         postal: '8024',
         city: 'Zürich',
         country: 'Schweiz',
-        source_note: 'Cantonal church council',
+        source_note: 'Kirchenrat',
         updated_at: '2026-01-27',
     },
-    // Zurich City specific (8000-8099)
+    // ZH - Zurich City Catholic (8000-8099)
     {
         id: 'zh-8000-cath',
         canton: 'ZH',
@@ -48,73 +52,15 @@ export const addressBook: AddressEntry[] = [
         postal: '8004',
         city: 'Zürich',
         country: 'Schweiz',
-        source_note: 'City association headquarters',
+        source_note: 'Stadtverband Katholischer Pfarreien',
         updated_at: '2026-01-27',
     },
 
-    // GENEVA (GE) - Catholic
-    {
-        id: 'ge-cath-default',
-        canton: 'GE',
-        zip: '*',
-        confession: 'catholic',
-        recipient_name: 'Église catholique romaine à Genève',
-        addr1: 'Rue du Général-Dufour 18',
-        addr2: '',
-        postal: '1204',
-        city: 'Genève',
-        country: 'Suisse',
-        source_note: 'Maison diocésaine de Genève',
-        updated_at: '2026-01-27',
-    },
-    // GENEVA (GE) - Reformed (Protestant)
-    {
-        id: 'ge-ref-default',
-        canton: 'GE',
-        zip: '*',
-        confession: 'reformed',
-        recipient_name: 'Église protestante de Genève',
-        addr1: 'Rue Gourgas 24',
-        addr2: 'Case postale 73',
-        postal: '1211',
-        city: 'Genève 8',
-        country: 'Suisse',
-        source_note: 'Secrétariat général (Mailing Address)',
-        updated_at: '2026-01-27',
-    },
+    // ============================================
+    // BASEL-STADT (BS) - Major expat hub
+    // ============================================
 
-    // VAUD (VD) - Catholic
-    {
-        id: 'vd-cath-default',
-        canton: 'VD',
-        zip: '*',
-        confession: 'catholic',
-        recipient_name: 'Fédération ecclésiastique catholique romaine du Canton de Vaud',
-        addr1: 'Chemin des Mouettes 4',
-        addr2: 'Case postale 234',
-        postal: '1000',
-        city: 'Lausanne 6',
-        country: 'Suisse',
-        source_note: 'Federation headquarters (Mailing Address)',
-        updated_at: '2026-01-27',
-    },
-    // VAUD (VD) - Reformed
-    {
-        id: 'vd-ref-default',
-        canton: 'VD',
-        zip: '*',
-        confession: 'reformed',
-        recipient_name: 'Église évangélique réformée du Canton de Vaud',
-        addr1: 'Chemin des Cèdres 7',
-        addr2: '',
-        postal: '1004',
-        city: 'Lausanne',
-        country: 'Suisse',
-        source_note: 'EERV headquarters',
-        updated_at: '2026-01-27',
-    },
-
-    // BASEL-STADT (BS) - Catholic
+    // BS - Catholic
     {
         id: 'bs-cath-default',
         canton: 'BS',
@@ -126,10 +72,10 @@ export const addressBook: AddressEntry[] = [
         postal: '4058',
         city: 'Basel',
         country: 'Schweiz',
-        source_note: 'Cantonal administration',
+        source_note: 'Synodalrat',
         updated_at: '2026-01-27',
     },
-    // BASEL-STADT (BS) - Reformed
+    // BS - Reformed
     {
         id: 'bs-ref-default',
         canton: 'BS',
@@ -141,7 +87,77 @@ export const addressBook: AddressEntry[] = [
         postal: '4001',
         city: 'Basel',
         country: 'Schweiz',
-        source_note: 'Church administration (Mailing Address)',
+        source_note: 'Kirchenrat (Mailing Address)',
+        updated_at: '2026-01-27',
+    },
+
+    // ============================================
+    // BERN (BE) - Second largest city
+    // ============================================
+
+    // BE - Catholic
+    {
+        id: 'be-cath-default',
+        canton: 'BE',
+        zip: '*',
+        confession: 'catholic',
+        recipient_name: 'Römisch-katholische Landeskirche des Kantons Bern',
+        addr1: 'Zähringerstrasse 25',
+        addr2: '',
+        postal: '3012',
+        city: 'Bern',
+        country: 'Schweiz',
+        source_note: 'Landeskirche Bern',
+        updated_at: '2026-01-27',
+    },
+    // BE - Reformed
+    {
+        id: 'be-ref-default',
+        canton: 'BE',
+        zip: '*',
+        confession: 'reformed',
+        recipient_name: 'Reformierte Kirchen Bern-Jura-Solothurn',
+        addr1: 'Altenbergstrasse 66',
+        addr2: 'Postfach',
+        postal: '3000',
+        city: 'Bern 22',
+        country: 'Schweiz',
+        source_note: 'Refbejuso Hauptsitz',
+        updated_at: '2026-01-27',
+    },
+
+    // ============================================
+    // ZUG (ZG) - High-income expat canton
+    // ============================================
+
+    // ZG - Catholic (Note: Zug requires local parish, using cantonal as fallback)
+    {
+        id: 'zg-cath-default',
+        canton: 'ZG',
+        zip: '*',
+        confession: 'catholic',
+        recipient_name: 'Katholische Kirche im Kanton Zug',
+        addr1: 'Aegeristrasse 4c',
+        addr2: '',
+        postal: '6300',
+        city: 'Zug',
+        country: 'Schweiz',
+        source_note: 'Kantonale Verwaltung (zgkath.ch)',
+        updated_at: '2026-01-27',
+    },
+    // ZG - Reformed
+    {
+        id: 'zg-ref-default',
+        canton: 'ZG',
+        zip: '*',
+        confession: 'reformed',
+        recipient_name: 'Reformierte Kirche Kanton Zug',
+        addr1: 'Bundesstrasse 15',
+        addr2: '',
+        postal: '6300',
+        city: 'Zug',
+        country: 'Schweiz',
+        source_note: 'Kirchenkanzlei (ref-zug.ch)',
         updated_at: '2026-01-27',
     },
 ];
@@ -199,12 +215,12 @@ export function findAddress(
 
 export const cantonNames: Record<Canton, string> = {
     ZH: 'Zürich',
-    GE: 'Genève',
-    VD: 'Vaud',
     BS: 'Basel-Stadt',
+    BE: 'Bern',
+    ZG: 'Zug',
 };
 
 export const confessionNames: Record<Confession, string> = {
-    catholic: 'Roman Catholic',
-    reformed: 'Reformed Protestant',
+    catholic: 'Römisch-katholisch',
+    reformed: 'Evangelisch-reformiert',
 };

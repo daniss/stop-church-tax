@@ -21,24 +21,22 @@ export async function generateExitPdf(
     const lineHeight = 16;
 
     // Language detection
-    const isGerman = ['ZH', 'BS'].includes(formData.canton);
+    // All currently supported cantons (ZH, BS, BE, ZG) use German as official language
+    // We force German to ensure the authority accepts the letter
+    const isGerman = true;
 
     // Format today's date
     const today = new Date();
-    const dateStr = today.toLocaleDateString(isGerman ? 'de-CH' : 'fr-CH', {
+    const dateStr = today.toLocaleDateString('de-CH', {
         day: '2-digit',
         month: '2-digit',
         year: 'numeric',
     });
 
     // Confession labels
-    const confessionLabel = isGerman
-        ? (formData.confession === 'catholic' ? 'röm.-kath.' : 'ref.')
-        : (formData.confession === 'catholic' ? 'catholique romaine' : 'réformée');
+    const confessionLabel = formData.confession === 'catholic' ? 'röm.-kath.' : 'ref.';
 
-    const confessionFull = isGerman
-        ? (formData.confession === 'catholic' ? 'römisch-katholischen Kirche' : 'evangelisch-reformierten Kirche')
-        : (formData.confession === 'catholic' ? "l'Église catholique romaine" : "l'Église protestante réformée");
+    const confessionFull = formData.confession === 'catholic' ? 'römisch-katholischen Kirche' : 'evangelisch-reformierten Kirche';
 
     // === SENDER BLOCK (top right) ===
     let yPosition = height - margin;
@@ -90,7 +88,7 @@ export async function generateExitPdf(
     const postalCityParts = formData.postalCity.trim().split(/\s+/);
     const cityName = postalCityParts.length > 1
         ? postalCityParts.slice(1).join(' ')
-        : (isGerman ? 'Schweiz' : 'Suisse');
+        : 'Schweiz';
 
     page.drawText(`${cityName}, ${dateStr}`, {
         x: margin,
@@ -102,9 +100,7 @@ export async function generateExitPdf(
     yPosition -= lineHeight * 2;
 
     // === SUBJECT LINE ===
-    const subject = isGerman
-        ? `Kirchenaustritt (${confessionLabel}) / Austritt aus der ${confessionFull}`
-        : `Déclaration de sortie (${confessionLabel}) / Sortie de ${confessionFull}`;
+    const subject = `Kirchenaustritt (${confessionLabel}) / Austritt aus der ${confessionFull}`;
 
     page.drawText(subject, {
         x: margin,
@@ -117,7 +113,7 @@ export async function generateExitPdf(
 
     // === IDENTITY BLOCK ===
     // Format DOB from ISO (YYYY-MM-DD) to Swiss format (DD.MM.YYYY)
-    let dobDisplay = isGerman ? '[Geburtsdatum]' : '[Date de naissance]';
+    let dobDisplay = '[Geburtsdatum]';
     if (formData.dateOfBirth) {
         const parts = formData.dateOfBirth.split('-');
         if (parts.length === 3) {
@@ -127,19 +123,12 @@ export async function generateExitPdf(
         }
     }
 
-    const identityLines = isGerman
-        ? [
-            `Name: ${formData.fullName}`,
-            `Geburtsdatum: ${dobDisplay}`,
-            `Adresse: ${formData.addressLine1}${formData.addressLine2 ? ', ' + formData.addressLine2 : ''}, ${formData.postalCity}`,
-            `Konfession: ${confessionLabel}`,
-        ]
-        : [
-            `Nom: ${formData.fullName}`,
-            `Date de naissance: ${dobDisplay}`,
-            `Adresse: ${formData.addressLine1}${formData.addressLine2 ? ', ' + formData.addressLine2 : ''}, ${formData.postalCity}`,
-            `Confession: ${confessionLabel}`,
-        ];
+    const identityLines = [
+        `Name: ${formData.fullName}`,
+        `Geburtsdatum: ${dobDisplay}`,
+        `Adresse: ${formData.addressLine1}${formData.addressLine2 ? ', ' + formData.addressLine2 : ''}, ${formData.postalCity}`,
+        `Konfession: ${confessionLabel}`,
+    ];
 
     identityLines.forEach((line) => {
         page.drawText(line, {
@@ -155,35 +144,20 @@ export async function generateExitPdf(
     yPosition -= lineHeight;
 
     // === BODY ===
-    const bodyLines = isGerman
-        ? [
-            'Sehr geehrte Damen und Herren,',
-            '',
-            `Hiermit erkläre ich meinen Austritt aus der ${confessionFull}`,
-            'per sofort ab Eingang dieses Schreibens.',
-            '',
-            'Bitte bestätigen Sie mir schriftlich den Erhalt dieses Schreibens',
-            'sowie das Wirksamkeitsdatum meines Austritts.',
-            '',
-            'Falls eine Meldung an zuständige Stellen vorgesehen ist,',
-            'bitte ich um entsprechende Veranlassung.',
-            '',
-            'Freundliche Grüsse,',
-        ]
-        : [
-            'Madame, Monsieur,',
-            '',
-            `Par la présente, je déclare ma sortie de ${confessionFull}`,
-            'avec effet dès réception de ce courrier.',
-            '',
-            'Je vous prie de bien vouloir m\'adresser une confirmation écrite',
-            'de la réception de ce courrier ainsi que de la date d\'effet de ma sortie.',
-            '',
-            'Si une notification aux autorités compétentes est prévue,',
-            'je vous prie de bien vouloir y procéder.',
-            '',
-            'Veuillez agréer, Madame, Monsieur, mes salutations distinguées.',
-        ];
+    const bodyLines = [
+        'Sehr geehrte Damen und Herren,',
+        '',
+        `Hiermit erkläre ich meinen Austritt aus der ${confessionFull}`,
+        'per sofort ab Eingang dieses Schreibens.',
+        '',
+        'Bitte bestätigen Sie mir schriftlich den Erhalt dieses Schreibens',
+        'sowie das Wirksamkeitsdatum meines Austritts.',
+        '',
+        'Falls eine Meldung an zuständige Stellen vorgesehen ist,',
+        'bitte ich um entsprechende Veranlassung.',
+        '',
+        'Freundliche Grüsse,',
+    ];
 
     bodyLines.forEach((line) => {
         page.drawText(line, {
@@ -217,7 +191,7 @@ export async function generateExitPdf(
     });
     yPosition -= lineHeight;
 
-    page.drawText(isGerman ? '(Unterschrift)' : '(Signature)', {
+    page.drawText('(Unterschrift)', {
         x: margin,
         y: yPosition,
         size: 9,
@@ -228,9 +202,7 @@ export async function generateExitPdf(
     yPosition -= lineHeight * 2;
 
     // === P.S. FORWARDING CLAUSE ===
-    const psText = isGerman
-        ? 'P.S. Falls Sie nicht zuständig sind, bitte ich Sie, dieses Schreiben an die zuständige Stelle weiterzuleiten oder mir die korrekte Adresse mitzuteilen.'
-        : 'P.S. Si vous n\'êtes pas l\'autorité compétente, je vous remercie de transmettre cette demande au service compétent ou de m\'indiquer l\'adresse correcte.';
+    const psText = 'P.S. Falls Sie nicht zuständig sind, bitte ich Sie, dieses Schreiben an die zuständige Stelle weiterzuleiten oder mir die korrekte Adresse mitzuteilen.';
 
     // Split P.S. into multiple lines if too long (max ~80 chars per line)
     const psWords = psText.split(' ');
@@ -260,8 +232,144 @@ export async function generateExitPdf(
         yPosition -= 12;
     });
 
-    // === FOOTER ===
-    page.drawText('Generated by SwissShield.ch — Document Automation Service', {
+    // === PAGE 1 FOOTER ===
+    page.drawText('Generated by SwissShield.ch — Document Automation Service (Page 1/2)', {
+        x: margin,
+        y: 40,
+        size: 8,
+        font: helvetica,
+        color: rgb(0.6, 0.6, 0.6),
+    });
+
+    // ==========================================
+    // PAGE 2: EMPLOYER NOTIFICATION (HR LETTER)
+    // ==========================================
+    const page2 = pdfDoc.addPage([595.28, 841.89]);
+    let yPos2 = height - margin;
+
+    // === P2 SENDER BLOCK ===
+    senderLines.forEach((line) => {
+        page2.drawText(line, {
+            x: width - margin - 180,
+            y: yPos2,
+            size: fontSize,
+            font: helvetica,
+            color: rgb(0, 0, 0),
+        });
+        yPos2 -= lineHeight;
+    });
+
+    yPos2 -= lineHeight * 2;
+
+    // === P2 RECIPIENT BLOCK (Generic) ===
+    const hrRecipientLines = [
+        'An die Personalabteilung / HR Department',
+        '(Ihres Arbeitgebers)',
+    ];
+
+    hrRecipientLines.forEach((line) => {
+        page2.drawText(line, {
+            x: margin,
+            y: yPos2,
+            size: fontSize,
+            font: helvetica,
+            color: rgb(0, 0, 0),
+        });
+        yPos2 -= lineHeight;
+    });
+
+    yPos2 -= lineHeight * 4;
+
+    // === P2 DATE LINE ===
+    page2.drawText(`${cityName}, ${dateStr}`, {
+        x: margin,
+        y: yPos2,
+        size: fontSize,
+        font: helvetica,
+        color: rgb(0, 0, 0),
+    });
+    yPos2 -= lineHeight * 2;
+
+    // === P2 SUBJECT LINE ===
+    page2.drawText('Anpassung Quellensteuertarif (Kirchenaustritt)', {
+        x: margin,
+        y: yPos2,
+        size: fontSize + 1,
+        font: helveticaBold,
+        color: rgb(0, 0, 0),
+    });
+    yPos2 -= lineHeight * 2;
+
+    // === P2 BODY ===
+    const hrBodyLines = [
+        'Sehr geehrte Damen und Herren,',
+        '',
+        'Ich habe per sofort meinen Austritt aus der Kirche erklärt.',
+        '',
+        'Bitte ändern Sie meinen Quellensteuertarif ab dem nächstmöglichen Zeitpunkt',
+        'von Code "Y" (mit Kirchensteuer) auf Code "N" (ohne Kirchensteuer).',
+        'Beispiel: Tarif A0Y -> A0N.',
+        '',
+        'Eine Kopie meiner Austrittserklärung lege ich bei (oder reiche die Bestätigung',
+        'nach, sobald ich diese von der Kirche erhalten habe).',
+        '',
+        'Vielen Dank für die Kenntnisnahme.',
+        '',
+        'Freundliche Grüsse,',
+    ];
+
+    hrBodyLines.forEach((line) => {
+        if (line.includes('A0Y') || line.includes('A0N')) {
+            page2.drawText(line, {
+                x: margin,
+                y: yPos2,
+                size: fontSize,
+                font: helveticaBold,
+                color: rgb(0, 0, 0),
+            });
+        } else {
+            page2.drawText(line, {
+                x: margin,
+                y: yPos2,
+                size: fontSize,
+                font: helvetica,
+                color: rgb(0, 0, 0),
+            });
+        }
+        yPos2 -= lineHeight;
+    });
+
+    yPos2 -= lineHeight * 2;
+
+    // === P2 SIGNATURE ===
+    page2.drawText('________________________', {
+        x: margin,
+        y: yPos2,
+        size: fontSize,
+        font: helvetica,
+        color: rgb(0.5, 0.5, 0.5),
+    });
+    yPos2 -= lineHeight;
+
+    page2.drawText(formData.fullName, {
+        x: margin,
+        y: yPos2,
+        size: fontSize,
+        font: helvetica,
+        color: rgb(0.3, 0.3, 0.3),
+    });
+    yPos2 -= lineHeight;
+
+    page2.drawText('(Unterschrift)', {
+        x: margin,
+        y: yPos2,
+        size: 9,
+        font: helvetica,
+        color: rgb(0.5, 0.5, 0.5),
+    });
+
+    // === P2 FOOTER ===
+    page2.drawText('Generated by SwissShield.ch — Document Automation Service (Page 2/2)', {
         x: margin,
         y: 40,
         size: 8,
