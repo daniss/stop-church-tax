@@ -195,7 +195,7 @@ function SuccessContent() {
 
                 {/* Footer */}
                 <div className="mt-12 text-center text-sm text-gray-500">
-                    <p>Questions? Contact us at swissshieldsup@outlook.fr</p>
+                    <p>Questions? Contact us at support@stop-church-tax.ch</p>
                 </div>
             </div>
         </div>

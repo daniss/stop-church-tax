@@ -65,7 +65,7 @@ export default function PrivacyPage() {
                         <li><strong>Portability:</strong> Receive your data in a machine-readable format</li>
                     </ul>
                     <p>
-                        To exercise these rights, email <a href="mailto:swissshieldsup@outlook.fr">swissshieldsup@outlook.fr</a>
+                        To exercise these rights, email <a href="mailto:support@stop-church-tax.ch">support@stop-church-tax.ch</a>
                     </p>
 
                     <h2>6. Cookies</h2>
@@ -83,7 +83,7 @@ export default function PrivacyPage() {
                     <h2>8. Contact</h2>
                     <p>
                         Data Controller: Swiss Shield<br />
-                        Email: <a href="mailto:swissshieldsup@outlook.fr">swissshieldsup@outlook.fr</a>
+                        Email: <a href="mailto:support@stop-church-tax.ch">support@stop-church-tax.ch</a>
                     </p>
                 </div>
             </main>

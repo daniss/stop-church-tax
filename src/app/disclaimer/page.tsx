@@ -85,7 +85,7 @@ export default function DisclaimerPage() {
                     <h2>Contact Us</h2>
                     <p>
                         If you have questions about a specific situation, please consult a professional.
-                        For questions about our service, email <a href="mailto:swissshieldsup@outlook.fr">swissshieldsup@outlook.fr</a>
+                        For questions about our service, email <a href="mailto:support@stop-church-tax.ch">support@stop-church-tax.ch</a>
                     </p>
                 </div>
             </main>

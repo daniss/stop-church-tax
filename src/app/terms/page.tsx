@@ -56,7 +56,7 @@ export default function TermsPage() {
                     <p>
                         Payment is non-refundable once a PDF has been generated and downloaded. If you believe
                         you received an incorrect document due to our error (e.g., wrong canton routing), contact
-                        us at swissshieldsup@outlook.fr within 7 days for a replacement or refund.
+                        us at support@stop-church-tax.ch within 7 days for a replacement or refund.
                     </p>
 
                     <h2>5. Data Handling</h2>
@@ -86,7 +86,7 @@ export default function TermsPage() {
 
                     <h2>Contact</h2>
                     <p>
-                        Questions about these terms? Email us at <a href="mailto:swissshieldsup@outlook.fr">swissshieldsup@outlook.fr</a>
+                        Questions about these terms? Email us at <a href="mailto:support@stop-church-tax.ch">support@stop-church-tax.ch</a>
                     </p>
                 </div>
             </main>

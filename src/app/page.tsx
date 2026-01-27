@@ -250,7 +250,7 @@ export default function HomePage() {
                     setFormData({ ...formData, dateOfBirth: e.target.value })
                   }
                   max={new Date().toISOString().split('T')[0]}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-gray-900"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-gray-900 appearance-none bg-white"
                   required
                 />
               </div>
@@ -466,7 +466,7 @@ export default function HomePage() {
               },
               {
                 q: 'What if I picked the wrong confession?',
-                a: 'Contact us at swissshieldsup@outlook.fr and we\'ll regenerate your letter at no additional cost.',
+                a: 'Contact us at support@stop-church-tax.ch and we\'ll regenerate your letter at no additional cost.',
               },
             ].map((faq, i) => (
               <div key={i} className="bg-white rounded-xl p-6 shadow-sm">
