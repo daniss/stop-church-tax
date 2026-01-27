@@ -9,7 +9,7 @@ import {
   ArrowRight,
   FileText,
   Clock,
-  BadgeSwissFranc,
+  AlertTriangle,
   Loader2,
   AlertCircle,
   MapPin,
@@ -83,9 +83,9 @@ export default function HomePage() {
         <div className="relative max-w-6xl mx-auto px-4 py-16 sm:py-24">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/20 rounded-full px-4 py-2 mb-6">
-              <BadgeSwissFranc className="w-4 h-4 text-red-400" />
-              <span className="text-red-300 text-sm font-medium">
-                Attention: Do you have Code "A0Y" on your payslip?
+              <AlertTriangle className="w-4 h-4 text-red-500" />
+              <span className="text-red-500 text-sm font-bold uppercase tracking-wide">
+                Warning: Do you have Code "A0Y" on your payslip?
               </span>
             </div>
 
