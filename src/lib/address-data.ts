@@ -200,8 +200,6 @@ export function findAddress(
             found: true,
             exact: false,
             address: fallback,
-            fallbackMessage:
-                "We couldn't find your exact ZIP, but we've routed your letter to the cantonal church office.",
         };
     }
 

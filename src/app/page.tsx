@@ -91,10 +91,11 @@ export default function HomePage() {
 
             <h1 className="text-4xl sm:text-6xl font-bold text-white mb-6 tracking-tight">
               Expats in Zurich: <br className="hidden sm:block" />
-              Stop Paying the Hidden{' '}
+              Stop Paying{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">
-                'Church Tax'
+                Church Tax
               </span>
+              {' '}(A0Y)
             </h1>
 
             <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-8">
@@ -136,7 +137,7 @@ export default function HomePage() {
                   Switch from A0Y to A0N
                 </h2>
                 <p className="text-sm text-gray-500">
-                  We'll find the correct church office for you
+                  We generate the correct letter and provide the best-match address
                 </p>
               </div>
             </div>
@@ -194,7 +195,16 @@ export default function HomePage() {
               </div>
 
               {/* Address Preview */}
-              {matchedAddress?.found && matchedAddress.address && (
+              {!formData.zip ? (
+                <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-slate-400 flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-slate-500">
+                      Enter your ZIP code to find the right parish address. If not found, we'll use the cantonal office.
+                    </p>
+                  </div>
+                </div>
+              ) : matchedAddress?.found && matchedAddress.address ? (
                 <div className="p-4 bg-green-50 border border-green-200 rounded-xl">
                   <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -210,15 +220,10 @@ export default function HomePage() {
                         {matchedAddress.address.postal}{' '}
                         {matchedAddress.address.city}
                       </p>
-                      {matchedAddress.fallbackMessage && (
-                        <p className="text-xs text-green-600 mt-2 italic">
-                          {matchedAddress.fallbackMessage}
-                        </p>
-                      )}
                     </div>
                   </div>
                 </div>
-              )}
+              ) : null}
 
               <hr className="border-gray-100" />
 
@@ -318,6 +323,33 @@ export default function HomePage() {
                 />
               </div>
 
+              {/* What You Get Preview */}
+              <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl">
+                <p className="text-sm font-medium text-gray-700 mb-2">What you'll receive:</p>
+                <ul className="text-sm text-gray-600 space-y-1">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                    <span>Kirchenaustritt letter (German, ready to print)</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                    <span>HR notification template (A0Y → A0N request)</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                    <span>Addressed to your specific parish office</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Guarantee */}
+              <div className="text-center text-sm text-gray-500">
+                <span className="inline-flex items-center gap-1">
+                  <Shield className="w-4 h-4" />
+                  Not satisfied? Full refund within 24 hours.
+                </span>
+              </div>
+
               {/* Error Message */}
               {error && (
                 <div className="p-4 bg-red-50 border border-red-200 rounded-xl flex items-start gap-3">
@@ -345,10 +377,10 @@ export default function HomePage() {
                 )}
               </button>
 
-              <p className="text-center text-xs text-gray-500">
-                Secure payment via Stripe. You'll receive your PDF
-                immediately.
-              </p>
+              <div className="text-center text-xs text-gray-500 space-y-1">
+                <p>Secure payment via Stripe. PDF available immediately.</p>
+                <p>Website in English. Letter generated in German (official format).</p>
+              </div>
             </div>
           </form>
 
