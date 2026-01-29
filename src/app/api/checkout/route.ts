@@ -60,14 +60,7 @@ export async function POST(request: NextRequest) {
             allow_promotion_codes: true,
             line_items: [
                 {
-                    price_data: {
-                        currency: 'chf',
-                        product_data: {
-                            name: 'Church Tax Exit Letter',
-                            description: `Official resignation letter for ${body.canton} - ${body.confession === 'catholic' ? 'Catholic' : 'Reformed'}`,
-                        },
-                        unit_amount: 2900, // CHF 29.00
-                    },
+                    price: 'price_1Sv37C16ADgb9jS1mwrGb42e',
                     quantity: 1,
                 },
             ],
