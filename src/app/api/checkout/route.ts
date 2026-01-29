@@ -57,7 +57,6 @@ export async function POST(request: NextRequest) {
         // Create Stripe Checkout Session
         const session = await stripe.checkout.sessions.create({
             // @ts-ignore
-            payment_method_types: ['card', 'twint', 'paypal'],
             allow_promotion_codes: true,
             line_items: [
                 {
