@@ -325,6 +325,18 @@ export default function HomePage() {
 
               {/* What You Get Preview */}
               <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl">
+                <div className="relative mb-4 group overflow-hidden rounded-lg border border-slate-200 shadow-sm bg-white">
+                  <img
+                    src="/preview_letter.png"
+                    alt="Sample Letter"
+                    className="w-full h-auto blur-[1px] opacity-90 transition-all group-hover:blur-0 group-hover:opacity-100"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <span className="bg-red-600/90 text-white px-4 py-1 text-sm font-bold rounded uppercase tracking-wider transform -rotate-12 shadow-lg backdrop-blur-sm">
+                      Sample / Muster
+                    </span>
+                  </div>
+                </div>
                 <p className="text-sm font-medium text-gray-700 mb-2">What you'll receive:</p>
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li className="flex items-center gap-2">
