@@ -9,23 +9,23 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Swiss Shield — Stop Paying Church Tax | Kirchenaustritt Made Easy",
+  title: "Schweizer Schild — Kirchensteuer sparen (A0Y) | Kirchenaustritt Schweiz",
   description:
-    "Generate your church resignation letter in 2 minutes. We find the correct parish address and create a legally valid letter. Save CHF 800-2,000 per year.",
+    "Erstellen Sie Ihren offiziellen Kirchenaustritt in 2 Minuten. Wir finden die korrekte Kirchgemeinde-Adresse. Sparen Sie CHF 800-2'000 pro Jahr.",
   keywords: [
     "Kirchenaustritt",
-    "church tax Switzerland",
-    "Kirchensteuer",
-    "leave church Switzerland",
-    "Swiss expat",
-    "stop church tax",
+    "Kirchensteuer Schweiz",
+    "A0Y Code",
+    "Lohnabrechnung",
+    "Kirche austreten",
+    "Kirchensteuer sparen",
   ],
   openGraph: {
-    title: "Swiss Shield — Stop Paying Church Tax",
+    title: "Schweizer Schild — Stop Kirchensteuer (A0Y)",
     description:
-      "Generate your church resignation letter in 2 minutes. Save CHF 800-2,000 per year.",
+      "Erstellen Sie Ihren Kirchenaustritt in 2 Minuten. Sparen Sie CHF 800-2'000 pro Jahr.",
     type: "website",
-    locale: "en_CH",
+    locale: "de_CH",
   },
 };
 

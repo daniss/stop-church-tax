@@ -85,36 +85,35 @@ export default function HomePage() {
             <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/20 rounded-full px-4 py-2 mb-6">
               <AlertTriangle className="w-4 h-4 text-red-500" />
               <span className="text-red-500 text-sm font-bold uppercase tracking-wide">
-                Warning: Do you have Code "A0Y" on your payslip?
+                Achtung: Haben Sie Code "A0Y" auf der Lohnabrechnung?
               </span>
             </div>
 
             <h1 className="text-4xl sm:text-6xl font-bold text-white mb-6 tracking-tight">
-              Expats in Zurich: <br className="hidden sm:block" />
-              Stop Paying{' '}
+              Kirchensteuer Sparen: <br className="hidden sm:block" />
+              Stoppen Sie den{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">
-                Church Tax
+                A0Y-Abzug
               </span>
-              {' '}(A0Y)
             </h1>
 
             <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-8">
-              Check your payslip. If you see code <strong>A0Y</strong>, you are paying church tax.
-              Use our tool to switch to <strong>A0N</strong> and save CHF 800–2,000/year.
+              Prüfen Sie Ihre Lohnabrechnung. Code <strong>A0Y</strong> bedeutet Kirchensteuer.
+              Wechseln Sie jetzt zu <strong>A0N</strong> und sparen Sie CHF 800–2'000 pro Jahr.
             </p>
 
             <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-400">
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-green-400" />
-                <span>Legally valid template</span>
+                <span>Rechtssichere Vorlage</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-green-400" />
-                <span>Bonus: HR Notification Letter</span>
+                <span>Inkl. Arbeitgeber-Brief</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-green-400" />
-                <span>Standard German Format</span>
+                <span>Offizielles Schweizer Format</span>
               </div>
             </div>
           </div>
@@ -134,10 +133,10 @@ export default function HomePage() {
               </div>
               <div>
                 <h2 className="text-xl font-bold text-gray-900">
-                  Switch from A0Y to A0N
+                  Wechsel von A0Y zu A0N
                 </h2>
                 <p className="text-sm text-gray-500">
-                  We generate the correct letter and provide the best-match address
+                  Wir erstellen den korrekten Brief und finden die passende Adresse
                 </p>
               </div>
             </div>
@@ -147,7 +146,7 @@ export default function HomePage() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Canton
+                    Kanton
                   </label>
                   <select
                     value={formData.canton}
@@ -163,7 +162,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Confession
+                    Konfession
                   </label>
                   <select
                     value={formData.confession}
@@ -182,13 +181,13 @@ export default function HomePage() {
               {/* ZIP Code */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  ZIP Code (PLZ / NPA)
+                  PLZ (Postleitzahl)
                 </label>
                 <input
                   type="text"
                   value={formData.zip}
                   onChange={(e) => setFormData({ ...formData, zip: e.target.value })}
-                  placeholder="e.g. 8001"
+                  placeholder="z.B. 8001"
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all text-gray-900"
                   required
                 />
@@ -200,7 +199,7 @@ export default function HomePage() {
                   <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-slate-400 flex-shrink-0 mt-0.5" />
                     <p className="text-sm text-slate-500">
-                      Enter your ZIP code to find the right parish address. If not found, we'll use the cantonal office.
+                      Geben Sie Ihre PLZ ein, um die richtige Kirchengemeinde zu finden. Falls nicht gefunden, verwenden wir die kantonale Adresse.
                     </p>
                   </div>
                 </div>
@@ -210,7 +209,7 @@ export default function HomePage() {
                     <MapPin className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="text-sm font-medium text-green-800">
-                        Letter will be sent to:
+                        Brief wird gesendet an:
                       </p>
                       <p className="text-sm text-green-700 mt-1">
                         {matchedAddress.address.recipient_name}
@@ -230,7 +229,7 @@ export default function HomePage() {
               {/* Personal Details */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Full Name (as registered)
+                  Vor- und Nachname
                 </label>
                 <input
                   type="text"
@@ -246,7 +245,7 @@ export default function HomePage() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Date of Birth
+                  Geburtsdatum
                 </label>
                 <input
                   type="date"
@@ -262,7 +261,7 @@ export default function HomePage() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Street Address
+                  Strasse & Hausnummer
                 </label>
                 <input
                   type="text"
@@ -278,7 +277,7 @@ export default function HomePage() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Apartment / Floor <span className="text-gray-400 font-normal">(optional)</span>
+                  Adresszusatz <span className="text-gray-400 font-normal">(optional)</span>
                 </label>
                 <input
                   type="text"
@@ -293,7 +292,7 @@ export default function HomePage() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  ZIP + City
+                  PLZ & Ort
                 </label>
                 <input
                   type="text"
@@ -309,7 +308,7 @@ export default function HomePage() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Email (for receipt)
+                  E-Mail Adresse
                 </label>
                 <input
                   type="email"
@@ -333,23 +332,23 @@ export default function HomePage() {
                   />
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <span className="bg-red-600/90 text-white px-4 py-1 text-sm font-bold rounded uppercase tracking-wider transform -rotate-12 shadow-lg backdrop-blur-sm">
-                      Sample / Muster
+                      Muster / Preview
                     </span>
                   </div>
                 </div>
-                <p className="text-sm font-medium text-gray-700 mb-2">What you'll receive:</p>
+                <p className="text-sm font-medium text-gray-700 mb-2">Was Sie erhalten:</p>
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    <span>Kirchenaustritt letter (German, ready to print)</span>
+                    <span>Kirchenaustritts-Brief (PDF, druckfertig)</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    <span>HR notification template (A0Y → A0N request)</span>
+                    <span>Brief für Arbeitgeber (A0Y → A0N)</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                    <span>Addressed to your specific parish office</span>
+                    <span>Adressiert an Ihre Kirchgemeinde</span>
                   </li>
                 </ul>
               </div>
@@ -358,7 +357,7 @@ export default function HomePage() {
               <div className="text-center text-sm text-gray-500">
                 <span className="inline-flex items-center gap-1">
                   <Shield className="w-4 h-4" />
-                  Not satisfied? Full refund within 24 hours.
+                  Nicht zufrieden? Geld zurück innert 24h.
                 </span>
               </div>
 
@@ -383,15 +382,15 @@ export default function HomePage() {
                   </>
                 ) : (
                   <>
-                    Generate Letter — CHF 29
+                    Austritt erstellen — CHF 9.99
                     <ArrowRight className="w-5 h-5" />
                   </>
                 )}
               </button>
 
               <div className="text-center text-xs text-gray-500 space-y-1">
-                <p>Secure payment via Stripe. PDF available immediately.</p>
-                <p>Website in English. Letter generated in German (official format).</p>
+                <p>Sichere Zahlung via Stripe. PDF sofort verfügbar.</p>
+                <p>Dokumente entsprechen dem offiziellen Schweizer Format.</p>
               </div>
             </div>
           </form>
@@ -402,24 +401,24 @@ export default function HomePage() {
               <div className="inline-flex items-center justify-center w-12 h-12 bg-slate-800 rounded-xl mb-3">
                 <FileText className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-white font-medium">HR Letter</h3>
-              <p className="text-slate-400 text-sm mt-1">Includes A0Y -&gt; A0N request</p>
+              <h3 className="text-white font-medium">Arbeitgeber-Brief</h3>
+              <p className="text-slate-400 text-sm mt-1">Beantragt Änderung (A0Y -&gt; A0N)</p>
             </div>
             <div className="p-4">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-slate-800 rounded-xl mb-3">
                 <MapPin className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-white font-medium">Correct Address</h3>
+              <h3 className="text-white font-medium">Korrekte Adresse</h3>
               <p className="text-slate-400 text-sm mt-1">
-                We route to the right office
+                Automatische Zuweisung der Kirchgemeinde
               </p>
             </div>
             <div className="p-4">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-slate-800 rounded-xl mb-3">
                 <Clock className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-white font-medium">2 Minutes</h3>
-              <p className="text-slate-400 text-sm mt-1">Instant PDF download</p>
+              <h3 className="text-white font-medium">2 Minuten</h3>
+              <p className="text-slate-400 text-sm mt-1">Sofortiger PDF-Download</p>
             </div>
 
           </div>
@@ -430,25 +429,25 @@ export default function HomePage() {
       <section className="bg-white py-20">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            How It Works
+            So funktioniert's
           </h2>
           <div className="grid md:grid-cols-4 gap-8">
             {[
               {
                 step: '1',
-                title: 'Check Payslip',
-                desc: 'Look for Code \"A0Y\"',
+                title: 'Lohnabrechnung',
+                desc: 'Suchen Sie nach Code \"A0Y\"',
               },
-              { step: '2', title: 'Fill Form', desc: 'Enter your details' },
+              { step: '2', title: 'Daten eingeben', desc: 'Füllen Sie das Formular aus' },
               {
                 step: '3',
-                title: 'Get 2 Letters',
-                desc: 'Church Exit + HR Notification',
+                title: '2 Briefe erhalten',
+                desc: 'Kirchenaustritt + Info an Arbeitgeber',
               },
               {
                 step: '4',
-                title: 'Send & Switch',
-                desc: 'Mail letters, switch to A0N',
+                title: 'Absenden & Sparen',
+                desc: 'Briefe versenden, zu A0N wechseln',
               },
             ].map((item) => (
               <div key={item.step} className="text-center">
@@ -466,19 +465,19 @@ export default function HomePage() {
       {/* ROI Section */}
       <section className="bg-gradient-to-r from-red-600 to-orange-500 py-16">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">The Math Is Simple</h2>
+          <h2 className="text-3xl font-bold mb-4">Die Rechnung lohnt sich</h2>
           <div className="grid md:grid-cols-3 gap-8 mt-8">
             <div className="bg-white/10 rounded-2xl p-6">
-              <p className="text-4xl font-bold">CHF 29</p>
-              <p className="text-white/80 mt-2">One-time cost</p>
+              <p className="text-4xl font-bold">CHF 9.99</p>
+              <p className="text-white/80 mt-2">Einmalige Kosten</p>
             </div>
             <div className="bg-white/10 rounded-2xl p-6">
-              <p className="text-4xl font-bold">CHF 1,000+</p>
-              <p className="text-white/80 mt-2">Saved per year</p>
+              <p className="text-4xl font-bold">CHF 1'000+</p>
+              <p className="text-white/80 mt-2">Gespart pro Jahr</p>
             </div>
             <div className="bg-white/10 rounded-2xl p-6">
-              <p className="text-4xl font-bold">3,448%</p>
-              <p className="text-white/80 mt-2">Your ROI</p>
+              <p className="text-4xl font-bold">100x</p>
+              <p className="text-white/80 mt-2">Return on Investment</p>
             </div>
           </div>
         </div>
@@ -488,29 +487,29 @@ export default function HomePage() {
       <section className="bg-slate-50 py-20">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Frequently Asked Questions
+            Häufige Fragen (FAQ)
           </h2>
           <div className="space-y-6">
             {[
               {
-                q: 'Is it legal to leave the church?',
-                a: 'Yes. Freedom of religion is guaranteed by the Swiss constitution. You have the right to leave at any time.',
+                q: 'Ist der Kirchenaustritt legal?',
+                a: 'Ja. Die Religionsfreiheit ist in der Bundesverfassung verankert (Art. 15 BV). Sie haben das Recht, jederzeit auszutreten.',
               },
               {
-                q: 'How much will I save?',
-                a: 'Church tax is typically 8-20% of your cantonal tax. For a CHF 100k salary in Zurich, that\'s roughly CHF 800-1,400 per year.',
+                q: 'Wie viel spare ich?',
+                a: 'Die Kirchensteuer beträgt je nach Gemeinde ca. 8-12% der einfachen Staatssteuer. Bei CHF 100\'000 Einkommen in Zürich sparen Sie ca. CHF 800–1\'400 pro Jahr.',
               },
               {
-                q: 'Do I need to send the letter by registered mail?',
-                a: 'It\'s strongly recommended. It costs CHF 5.80 and gives you proof of delivery. The church cannot claim they never received it.',
+                q: 'Muss ich den Brief eingeschrieben senden?',
+                a: 'Wir empfehlen den Versand per Einschreiben (CHF 5.80). So haben Sie einen rechtlichen Beweis für den Zugang der Kündigung.',
               },
               {
-                q: 'How long does the process take?',
-                a: 'Generating the letter takes 2 minutes. The church typically confirms within 4-6 weeks. The tax exemption applies immediately upon receipt.',
+                q: 'Wie lange dauert es?',
+                a: 'Die Erstellung dauert 2 Minuten. Die Bearbeitung durch die Kirchgemeinde dauert meist 4–6 Wochen. Der Austritt gilt jedoch ab Empfangsdatum.',
               },
               {
-                q: 'What if I picked the wrong confession?',
-                a: 'Contact us at support@stop-church-tax.ch and we\'ll regenerate your letter at no additional cost.',
+                q: 'Falsche Konfession gewählt?',
+                a: 'Schreiben Sie uns an support@stop-church-tax.ch und wir erstellen den Brief kostenlos neu.',
               },
             ].map((faq, i) => (
               <div key={i} className="bg-white rounded-xl p-6 shadow-sm">
@@ -528,25 +527,25 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-2">
               <Shield className="w-6 h-6 text-red-500" />
-              <span className="text-white font-semibold">Swiss Shield</span>
+              <span className="text-white font-semibold">Schweizer Schild</span>
             </div>
             <div className="flex gap-6 text-sm text-slate-400">
               <a href="/terms" className="hover:text-white transition-colors">
-                Terms
+                AGB
               </a>
               <a href="/privacy" className="hover:text-white transition-colors">
-                Privacy
+                Datenschutz
               </a>
               <a href="/disclaimer" className="hover:text-white transition-colors">
-                Disclaimer
+                Impressum
               </a>
               <a href="/refund" className="hover:text-white transition-colors">
-                Refunds
+                Rückerstattung
               </a>
             </div>
           </div>
           <p className="text-center text-slate-500 text-sm mt-8">
-            © 2026 Swiss Shield. Document automation service. Not legal advice.
+            © 2026 Swiss Shield. Automatisierter Brief-Service. Keine Rechtsberatung.
           </p>
         </div>
       </footer>

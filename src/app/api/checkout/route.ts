@@ -60,7 +60,14 @@ export async function POST(request: NextRequest) {
             allow_promotion_codes: true,
             line_items: [
                 {
-                    price: 'price_1Sv37C16ADgb9jS1mwrGb42e',
+                    price_data: {
+                        currency: 'chf',
+                        product_data: {
+                            name: 'Kirchenaustritts-Brief (PDF)',
+                            description: `Offizielles Austrittsschreiben für ${body.canton} - ${body.confession === 'catholic' ? 'Römisch-katholisch' : 'Evangelisch-reformiert'}`,
+                        },
+                        unit_amount: 999, // CHF 9.99
+                    },
                     quantity: 1,
                 },
             ],

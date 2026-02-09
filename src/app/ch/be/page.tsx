@@ -2,14 +2,14 @@ import { Shield, CheckCircle, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata = {
-    title: 'Kirchenaustritt Bern 2026 — Stop Paying Church Tax | Swiss Shield',
+    title: 'Kirchenaustritt Bern 2026 — Keine Kirchensteuer mehr | Schweizer Schild',
     description:
-        'Leave the church in Bern (BE) and stop paying Kirchensteuer. Generate your official resignation letter with the correct parish address in 2 minutes. Save hundreds of francs immediately.',
+        'Austritt aus der Kirche im Kanton Bern (BE). Sparen Sie Kirchensteuer ab sofort. Offizieller Austrittsbrief in 2 Minuten erstellt.',
     keywords: [
         'Kirchenaustritt Bern',
         'Kirchensteuer Bern',
-        'church tax Bern',
-        'leave church Bern',
+        'Kirchensteuer sparen Bern',
+        'Austritt Kirche Bern',
         'Kirche austreten Bern',
     ],
 };
@@ -29,14 +29,14 @@ export default function BernPage() {
             <main className="max-w-4xl mx-auto px-4 py-16">
                 <div className="text-center mb-12">
                     <span className="inline-block bg-red-500/10 text-red-400 px-4 py-1 rounded-full text-sm font-medium mb-4">
-                        Canton Bern (BE)
+                        Kanton Bern (BE)
                     </span>
                     <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
                         Kirchenaustritt in Bern
                     </h1>
                     <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-                        Stop paying church tax in Bern. Generate your official resignation letter
-                        with the correct address in 2 minutes.
+                        Keine Kirchensteuer mehr in Bern. Erstellen Sie Ihren offiziellen Austrittsbrief
+                        mit der korrekten Adresse in 2 Minuten.
                     </p>
                 </div>
 
@@ -44,62 +44,61 @@ export default function BernPage() {
                 <div className="grid md:grid-cols-3 gap-6 mb-12">
                     <div className="bg-slate-800 rounded-xl p-6 text-center">
                         <p className="text-3xl font-bold text-white">8–20%</p>
-                        <p className="text-slate-400 mt-1">Of cantonal tax</p>
+                        <p className="text-slate-400 mt-1">der Kantonssteuer</p>
                     </div>
                     <div className="bg-slate-800 rounded-xl p-6 text-center">
-                        <p className="text-3xl font-bold text-white">Instant</p>
-                        <p className="text-slate-400 mt-1">Effectiveness</p>
+                        <p className="text-3xl font-bold text-white">Sofort</p>
+                        <p className="text-slate-400 mt-1">Wirksamkeit</p>
                     </div>
                     <div className="bg-slate-800 rounded-xl p-6 text-center">
-                        <p className="text-3xl font-bold text-white">2 min</p>
-                        <p className="text-slate-400 mt-1">To generate letter</p>
+                        <p className="text-3xl font-bold text-white">2 Min</p>
+                        <p className="text-slate-400 mt-1">Dauer</p>
                     </div>
                 </div>
 
                 {/* Content */}
                 <div className="bg-white rounded-2xl p-8 md:p-12 mb-12">
                     <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                        How Church Tax Works in Bern
+                        Wie die Kirchensteuer in Bern funktioniert
                     </h2>
 
                     <div className="prose prose-gray max-w-none text-gray-800 mb-8">
                         <p>
-                            In Canton Bern, the <strong>Kirchensteuer</strong> (church tax) is mandatory for
-                            members of the recognized churches. The tax is calculated as a percentage of your
-                            cantonal tax, ranging significantly depending on your municipality.
+                            Im Kanton Bern ist die <strong>Kirchensteuer</strong> für Mitglieder der anerkannten
+                            Landeskirchen obligatorisch. Die Steuer wird als Prozentsatz der Kantonssteuer berechnet
+                            und variiert je nach Gemeinde stark.
                         </p>
 
-                        <h3>The Resignation Process in Bern</h3>
+                        <h3>Der Austrittsprozess in Bern</h3>
                         <ol>
-                            <li>Write a formal resignation letter (<em>Austrittserklärung</em>)</li>
-                            <li>Send it to the <strong>Gesamtkirchgemeinde</strong> or local parish</li>
-                            <li>Sign the letter by hand (mandatory)</li>
-                            <li>Send via registered mail (<em>Einschreiben</em>)</li>
+                            <li>Verfassen einer formellen Austrittserklärung</li>
+                            <li>Senden an die <strong>Gesamtkirchgemeinde</strong> oder lokale Kirchgemeinde</li>
+                            <li>Zwingend handschriftlich unterzeichnen</li>
+                            <li>Per Einschreiben versenden</li>
                         </ol>
 
                         <p>
-                            In Bern, unlike some other cantons, the church exit typically takes effect
-                            <strong>immediately</strong> upon receipt of your resignation letter. This means
-                            you stop paying church tax right away, pro-rated for the rest of the year.
+                            In Bern ist die Besonderheit, dass der Austritt meist <strong>sofort</strong> mit
+                            Eingang des Briefes wirksam wird. Das bedeutet, dass die Steuerpflicht oft per
+                            sofort (pro rata) endet.
                         </p>
 
                         <p>
-                            Finding the correct address for the &quot;Gesamtkirchgemeinde&quot; versus the local
-                            social services office can be confusing. Swiss Shield routes your letter to the
-                            correct administrative body for the fastest processing.
+                            Die richtige Adresse zu finden (Gesamtkirchgemeinde vs. Verwaltung) kann verwirrend sein.
+                            Schweizer Schild adressiert Ihren Brief automatisch an die zuständige Stelle.
                         </p>
                     </div>
 
                     <div className="bg-green-50 border border-green-200 rounded-xl p-6 mb-8">
                         <h3 className="font-semibold text-green-800 flex items-center gap-2 mb-3">
                             <CheckCircle className="w-5 h-5" />
-                            What Swiss Shield Does For You
+                            Was Schweizer Schild für Sie tut
                         </h3>
                         <ul className="text-green-700 space-y-2">
-                            <li>✓ Finds the correct church office address</li>
-                            <li>✓ Generates a legally valid resignation letter in German</li>
-                            <li>✓ Includes proper legal phrasing for immediate exit</li>
-                            <li>✓ Ready to print, sign, and mail</li>
+                            <li>✓ Findet die korrekte Adresse der Kirchgemeinde</li>
+                            <li>✓ Erstellt einen rechtssicheren Austrittsbrief</li>
+                            <li>✓ Inkludiert Formulierungen für sofortigen Austritt</li>
+                            <li>✓ Druckfertig zum Unterschreiben & Versenden</li>
                         </ul>
                     </div>
 
@@ -107,7 +106,7 @@ export default function BernPage() {
                         href="/"
                         className="flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-red-600 to-orange-500 text-white font-semibold rounded-xl hover:from-red-700 hover:to-orange-600 transition-all"
                     >
-                        Generate Your Bern Letter — CHF 29
+                        Berner Austritt erstellen — CHF 9.99
                         <ArrowRight className="w-5 h-5" />
                     </Link>
                 </div>
@@ -115,25 +114,25 @@ export default function BernPage() {
                 {/* FAQ */}
                 <div className="bg-slate-800 rounded-2xl p-8">
                     <h2 className="text-xl font-bold text-white mb-6">
-                        Frequently Asked Questions — Bern
+                        Häufige Fragen — Bern
                     </h2>
                     <div className="space-y-6">
                         <div>
                             <h3 className="font-semibold text-white">
-                                Can I leave the church via email?
+                                Kann ich per E-Mail austreten?
                             </h3>
                             <p className="text-slate-300 mt-2">
-                                No. In Bern, a handwritten signature on a physical letter is strictly required.
-                                Email resignations are typically rejected.
+                                Nein. Im Kanton Bern ist eine handschriftliche Unterschrift zwingend erforderlich.
+                                E-Mails werden in der Regel abgelehnt.
                             </p>
                         </div>
                         <div>
                             <h3 className="font-semibold text-white">
-                                Do I need to be a Swiss citizen to pay church tax?
+                                Muss ich Schweizer Bürger sein, um Kirchensteuer zu zahlen?
                             </h3>
                             <p className="text-slate-300 mt-2">
-                                No. Foreign residents (C permit, B permit) are also subject to church tax
-                                if they are registered as Catholic or Protestant.
+                                Nein. Auch ausländische Einwohner (C-Ausweis, B-Ausweis) sind kirchensteuerpflichtig,
+                                wenn sie einer Landeskirche angehören.
                             </p>
                         </div>
                     </div>
@@ -142,7 +141,7 @@ export default function BernPage() {
 
             <footer className="border-t border-slate-700 py-8 mt-12">
                 <div className="max-w-4xl mx-auto px-4 text-center text-slate-400 text-sm">
-                    © 2026 Swiss Shield. Document automation service. Not legal advice.
+                    © 2026 Schweizer Schild. Automatisierter Brief-Service. Keine Rechtsberatung.
                 </div>
             </footer>
         </div>
